@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * GabrielGama <http://gabrielgama.com>
+ *
+ * DISCLAIMER
+ *
+ * Don't change this file if you will upgrade your module in the future.
+ *
+ * @category      GabrielGama
+ * @package       GabrielGama_GiftRule
+ *
+ * @author        Gabriel da Gama <me@gabrielgama.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="GabrielGama_GiftRule" setup_version="1.0.0">
+        <sequence>
+            <module name="Magento_Rule"/>
+            <module name="Magento_Catalog"/>
+            <module name="Magento_Sales"/>
+            <module name="Magento_Quote"/>
+        </sequence>
+    </module>
+</config>

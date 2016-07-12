@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * GabrielGama <http://gabrielgama.com>
+ *
+ * DISCLAIMER
+ *
+ * Don't change this file if you will upgrade your module in the future.
+ *
+ * @category      GabrielGama
+ * @package       GabrielGama_GiftRule
+ *
+ * @author        Gabriel da Gama <me@gabrielgama.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="gift_rule" frontName="gift_rule">
+            <module name="GabrielGama_GiftRule" before="Magento_Backend" />
+        </route>
+    </router>
+</config>

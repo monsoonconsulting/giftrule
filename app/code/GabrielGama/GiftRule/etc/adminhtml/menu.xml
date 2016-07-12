@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * GabrielGama <http://gabrielgama.com>
+ *
+ * DISCLAIMER
+ *
+ * Don't change this file if you will upgrade your module in the future.
+ *
+ * @category      GabrielGama
+ * @package       GabrielGama_GiftRule
+ *
+ * @author        Gabriel da Gama <me@gabrielgama.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="GabrielGama_GiftRule::gift_quote" title="Cart Gift Rules" module="GabrielGama_GiftRule" parent="Magento_CatalogRule::promo" sortOrder="40" action="gift_rule/promo_quote" dependsOnModule="Magento_Rule" resource="GabrielGama_GiftRule::gift_quote"/>
+    </menu>
+</config>

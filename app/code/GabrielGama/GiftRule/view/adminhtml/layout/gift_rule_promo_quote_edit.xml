@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * GabrielGama <http://gabrielgama.com>
+ *
+ * DISCLAIMER
+ *
+ * Don't change this file if you will upgrade your module in the future.
+ *
+ * @category      GabrielGama
+ * @package       GabrielGama_GiftRule
+ *
+ * @author        Gabriel da Gama <me@gabrielgama.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="left">
+            <block class="GabrielGama\GiftRule\Block\Adminhtml\Promo\Quote\Edit\Tabs" name="promo_quote_edit_tabs">
+                <block class="GabrielGama\GiftRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Main" name="promo_quote_edit_tab_main"/>
+                <block class="GabrielGama\GiftRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Conditions" name="promo_quote_edit_tab_conditions"/>
+                <block class="GabrielGama\GiftRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Actions" name="promo_quote_edit_tab_actions"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">promo_quote_edit_tab_main</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">conditions_section</argument>
+                    <argument name="block" xsi:type="string">promo_quote_edit_tab_conditions</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">actions_section</argument>
+                    <argument name="block" xsi:type="string">promo_quote_edit_tab_actions</argument>
+                </action>
+            </block>
+            <!--<block class="Magento\Backend\Block\Template" template="Magento_SalesRule::promo/salesrulejs.phtml" name="promo_quote_edit_jsinit"/>-->
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="GabrielGama\GiftRule\Block\Adminhtml\Promo\Quote\Edit" name="promo_quote_edit"/>
+        </referenceContainer>
+    </body>
+</page>

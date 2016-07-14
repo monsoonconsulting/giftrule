@@ -25,7 +25,7 @@ class Collection extends \Magento\Rule\Model\ResourceModel\Rule\Collection\Abstr
      */
     protected $_associatedEntitiesMap = [
         'customer_group' => [
-            'associations_table' => 'salesrule_customer_group',
+            'associations_table' => 'gabrielgama_giftrule_customer_group',
             'rule_id_field' => 'rule_id',
             'entity_id_field' => 'customer_group_id',
         ],
@@ -80,15 +80,15 @@ class Collection extends \Magento\Rule\Model\ResourceModel\Rule\Collection\Abstr
      */
     public function setValidationFilter($customerGroupId, $now = null)
     {
-        if (!$this->getFlag('validation_filter')) {
+
             /* We need to overwrite joinLeft if coupon is applied */
             $this->getSelect()->reset();
             parent::_initSelect();
 
             $this->addGroupDateFilter($customerGroupId, $now);
 
-            $this->setFlag('validation_filter', true);
-        }
+//            $this->setFlag('validation_filter', true);
+//        }
 
         return $this;
     }

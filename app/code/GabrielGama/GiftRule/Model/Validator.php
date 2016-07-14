@@ -149,11 +149,18 @@ class Validator extends \Magento\Framework\Model\AbstractModel
         $this->rulesApplier->resetAppliedRules();
         $quote = $address->getQuote();
         $items = $quote->getItemsCollection(false);
+
+        if (!$items->getSize() && $quote) {
+            $quote->getResource()->delete($quote);
+            return $this;
+        }
+
         foreach ($items as $item) {
             if ($item->getIsGift()) {
-                $item->delete();
+                $item->getResource()->delete($item);
             }
         }
+
         return $this;
     }
 

@@ -90,7 +90,7 @@ class RulesApplier
     {
         try {
             $productId = $this->product->getIdBySku($rule->getGiftSku());
-            $this->product->load($productId);
+            $this->product->getResource()->load($this->product, $productId);
             if ($this->product) {
                 $this->product->addCustomOption('gabrielgama_gift', 1);
                 $quote = $address->getQuote();
@@ -98,7 +98,7 @@ class RulesApplier
                 $giftItem->setIsGift(1);
                 $giftItem->setCustomPrice(0);
                 $giftItem->setOriginalCustomPrice(0);
-                $giftItem->save();
+                $giftItem->getResource()->save($giftItem);
             }
         } catch (\Magento\Framework\Exception\LocalizedException $e) {
             //ToDo add exception treatment

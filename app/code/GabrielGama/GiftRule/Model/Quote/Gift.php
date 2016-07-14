@@ -44,9 +44,11 @@ class Gift extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
         \Magento\Quote\Api\Data\ShippingAssignmentInterface $shippingAssignment,
         \Magento\Quote\Model\Quote\Address\Total $total
     ) {
-        parent::collect($quote, $shippingAssignment, $total);
-
         $address = $shippingAssignment->getShipping()->getAddress();
+
+        if ($address->getAddressType() != 'shipping') {
+            return $this;
+        }
 
         $this->validator->reset($address);
 

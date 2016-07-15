@@ -150,7 +150,7 @@ class Validator extends \Magento\Framework\Model\AbstractModel
         $quote = $address->getQuote();
         $items = $quote->getItemsCollection(false);
 
-        if (!$items->getSize() && $quote) {
+        if (!$items->count() && $quote) {
             $quote->getResource()->delete($quote);
             return $this;
         }
